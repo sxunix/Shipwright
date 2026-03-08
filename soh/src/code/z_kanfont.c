@@ -10,6 +10,10 @@
 // SOH [NTSC]
 extern MessageTableEntry* sJpnMessageEntryTablePtr;
 
+// SOH [Chinese] - iQue font data
+extern const u8 sChineseFontData[276608];
+extern MessageTableEntry* sChiMessageEntryTablePtr;
+
 // #region SOH [Port] Asset tables we can pull from instead of from ROM
 const char* fontTbl[140] = {
     gMsgChar20SpaceTex,
@@ -4175,6 +4179,29 @@ void Font_LoadChar(Font* font, u8 character, u16 codePointIndex) {
 
     if (character < 0x8B)
         memcpy(&font->charTexBuf[codePointIndex], fontTbl[character], strlen(fontTbl[character]) + 1);
+}
+
+/**
+ * Loads a Chinese character glyph from the embedded iQue font data into the character texture buffer
+ * at `codePointIndex`. The value of `character` is the 2-byte iQue encoding (0xA08C-0xA775).
+ * Raw I4 pixel data (128 bytes) is copied directly into charTexBuf.
+ */
+void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
+    if (sChiMessageEntryTablePtr == NULL) {
+        return;
+    }
+
+    s32 glyphIndex;
+    if (character >= 0xAAAA && character <= 0xAC30) {
+        // Extra glyphs (391 chars at offset 1770)
+        glyphIndex = 1770 + (character - 0xAAAA);
+    } else {
+        // Original glyphs (1770 chars: 0xA08C-0xA775)
+        glyphIndex = character - 0xA08C;
+    }
+    if (glyphIndex >= 0 && glyphIndex < 2161) {
+        memcpy(&font->charTexBuf[codePointIndex], &sChineseFontData[glyphIndex * FONT_CHAR_TEX_SIZE], FONT_CHAR_TEX_SIZE);
+    }
 }
 
 /**

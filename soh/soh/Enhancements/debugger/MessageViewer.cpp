@@ -118,6 +118,7 @@ extern "C" MessageTableEntry* sGerMessageEntryTablePtr;
 extern "C" MessageTableEntry* sFraMessageEntryTablePtr;
 extern "C" MessageTableEntry* sJpnMessageEntryTablePtr;
 extern "C" MessageTableEntry* sStaffMessageEntryTablePtr;
+extern "C" MessageTableEntry* sChiMessageEntryTablePtr;
 
 void FindMessage(PlayState* play, const uint16_t textId, const uint8_t language) {
     const char* foundSeg;
@@ -131,6 +132,8 @@ void FindMessage(PlayState* play, const uint16_t textId, const uint8_t language)
         messageTableEntry = sFraMessageEntryTablePtr;
     else if (language == LANGUAGE_JPN)
         messageTableEntry = sJpnMessageEntryTablePtr;
+    else if (language == LANGUAGE_CHI)
+        messageTableEntry = sChiMessageEntryTablePtr;
 
     // If PAL languages are not present in the OTR file, default to English
     if (messageTableEntry == nullptr)

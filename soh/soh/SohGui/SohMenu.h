@@ -32,6 +32,7 @@ static std::unordered_map<int32_t, const char*> languages = {
     { LANGUAGE_GER, "German" },
     { LANGUAGE_FRA, "French" },
     { LANGUAGE_JPN, "Japanese" },
+    { LANGUAGE_CHI, "Chinese" },
 };
 
 class SohMenu : public Ship::Menu {

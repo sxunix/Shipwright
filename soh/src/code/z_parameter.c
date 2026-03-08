@@ -3803,8 +3803,8 @@ void Interface_DrawActionLabel(GraphicsContext* gfxCtx, void* texture) {
 }
 
 void Interface_DrawItemButtons(PlayState* play) {
-    static void* cUpLabelTextures[] = { gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpJPTex };
-    static s16 startButtonLeftPos[] = { 132, 130, 130, 132 };
+    static void* cUpLabelTextures[] = { gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpJPTex, gNaviCUpENGTex };
+    static s16 startButtonLeftPos[] = { 132, 130, 130, 132, 132 };
     InterfaceContext* interfaceCtx = &play->interfaceCtx;
     Player* player = GET_PLAYER(play);
     PauseContext* pauseCtx = &play->pauseCtx;

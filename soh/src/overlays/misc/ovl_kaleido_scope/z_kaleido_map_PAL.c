@@ -440,6 +440,7 @@ void KaleidoScope_DrawWorldMap(PlayState* play, GraphicsContext* gfxCtx) {
         gPauseCurrentPositionGERTex,
         gPauseCurrentPositionFRATex,
         gPauseCurrentPositionJPNTex,
+        gPauseCurrentPositionENGTex, // CHI uses ENG
     };
     static u16 D_8082A6D4 = 0;
     PauseContext* pauseCtx = &play->pauseCtx;

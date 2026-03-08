@@ -155,11 +155,18 @@ const std::string CustomMessage::GetFrench(MessageFormat format) const {
 }
 
 const std::string CustomMessage::GetForCurrentLanguage(MessageFormat format) const {
-    return GetForLanguage(
-        ((Language)gSaveContext.language == LANGUAGE_JPN) ? LANGUAGE_ENG : (Language)gSaveContext.language, format);
+    Language lang = (Language)gSaveContext.language;
+    // Fall back to English for languages without custom message translations
+    if (lang == LANGUAGE_JPN || lang == LANGUAGE_CHI || lang >= (Language)messages.size()) {
+        lang = LANGUAGE_ENG;
+    }
+    return GetForLanguage(lang, format);
 }
 
 const std::string CustomMessage::GetForLanguage(uint8_t language, MessageFormat format) const {
+    if (language >= messages.size()) {
+        language = LANGUAGE_ENG;
+    }
     std::string output = !messages[language].starts_with(TODO_TRANSLATE) ? messages[language] : messages[LANGUAGE_ENG];
     ProcessMessageFormat(output, format);
     return output;

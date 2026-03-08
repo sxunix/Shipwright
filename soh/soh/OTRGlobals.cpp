@@ -1092,7 +1092,11 @@ void DetectOTRVersion(std::string fileName, bool isMQ) {
 }
 
 extern "C" void Messagebox_ShowErrorBox(char* title, char* body) {
+#ifdef __SWITCH__
+    Ship::Switch::PrintErrorMessageToScreen(body);
+#else
     Extractor::ShowErrorBox(title, body);
+#endif
 }
 
 bool IsSubpath(const std::filesystem::path& path, const std::filesystem::path& base) {
@@ -1155,7 +1159,7 @@ extern "C" void InitOTR(int argc, char* argv[]) {
 #endif
     OTRGlobals::Instance = new OTRGlobals();
 #ifdef __SWITCH__
-    Ship::Switch::Init(Ship::PreInitPhase);
+    Ship::Switch::Init(Ship::Switch::PreInitPhase);
 #elif defined(__WIIU__)
     Ship::WiiU::Init(appShortName);
 #endif

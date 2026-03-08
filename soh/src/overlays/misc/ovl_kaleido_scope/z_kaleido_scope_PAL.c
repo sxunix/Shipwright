@@ -217,6 +217,7 @@ static void* sEquipmentTexs[] = {
     sEquipmentGERTexs,
     sEquipmentFRATexs,
     sEquipmentJPNTexs,
+    sEquipmentENGTexs, // LANGUAGE_CHI — fallback to English
 };
 
 static void* sSelectItemTexs[] = {
@@ -224,6 +225,7 @@ static void* sSelectItemTexs[] = {
     sSelectItemGERTexs,
     sSelectItemFRATexs,
     sSelectItemJPNTexs,
+    sSelectItemENGTexs, // LANGUAGE_CHI
 };
 
 static void* sMapTexs[] = {
@@ -231,6 +233,7 @@ static void* sMapTexs[] = {
     sMapGERTexs,
     sMapFRATexs,
     sMapJPNTexs,
+    sMapENGTexs, // LANGUAGE_CHI
 };
 
 static void* sQuestStatusTexs[] = {
@@ -238,6 +241,7 @@ static void* sQuestStatusTexs[] = {
     sQuestStatusGERTexs,
     sQuestStatusFRATexs,
     sQuestStatusJPNTexs,
+    sQuestStatusENGTexs, // LANGUAGE_CHI
 };
 
 static void* sSaveTexs[] = {
@@ -245,6 +249,7 @@ static void* sSaveTexs[] = {
     sSaveGERTexs,
     sSaveFRATexs,
     sSaveJPNTexs,
+    sSaveENGTexs, // LANGUAGE_CHI
 };
 
 static void* iconNameTextures[] = {
@@ -1114,6 +1119,7 @@ static void* sSavePromptTexs[] = {
     gPauseSavePromptGERTex,
     gPauseSavePromptFRATex,
     gPauseSavePromptJPNTex,
+    gPauseSavePromptENGTex, // LANGUAGE_CHI
 };
 
 static void* sSaveConfirmationTexs[] = {
@@ -1121,6 +1127,7 @@ static void* sSaveConfirmationTexs[] = {
     gPauseSaveConfirmationGERTex,
     gPauseSaveConfirmationFRATex,
     gPauseSaveConfirmationJPNTex,
+    gPauseSaveConfirmationENGTex, // LANGUAGE_CHI
 };
 
 static void* sContinuePromptTexs[] = {
@@ -1128,6 +1135,7 @@ static void* sContinuePromptTexs[] = {
     gContinuePlayingGERTex,
     gContinuePlayingFRATex,
     gContinuePlayingJPNTex,
+    gContinuePlayingENGTex, // LANGUAGE_CHI
 };
 
 static void* sPromptChoiceTexs[][2] = {
@@ -1135,6 +1143,7 @@ static void* sPromptChoiceTexs[][2] = {
     { gPauseYesGERTex, gPauseNoGERTex },
     { gPauseYesFRATex, gPauseNoFRATex },
     { gPauseYesJPNTex, gPauseNoJPNTex },
+    { gPauseYesENGTex, gPauseNoENGTex }, // LANGUAGE_CHI
 };
 
 static u8 sButtonStatusSave[ARRAY_COUNT(gSaveContext.buttonStatus)];
@@ -1911,39 +1920,42 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
         cRightButtonColor = CVarGetColor24(CVAR_COSMETIC("HUD.CRightButton.Value"), cRightButtonColor);
     }
 
-    static const void* sToEquipTextures[4] = {
+    static const void* sToEquipTextures[5] = {
         gPauseToEquipENGTex,
         gPauseToEquipGERTex,
         gPauseToEquipFRATex,
         gPauseToEquipJPNTex,
+        gPauseToEquipENGTex, // CHI uses ENG
     };
-    static const void* sToDecideTextures[4] = {
+    static const void* sToDecideTextures[5] = {
         gPauseToDecideENGTex,
         gPauseToDecideGERTex,
         gPauseToDecideFRATex,
         gPauseToDecideJPNTex,
+        gPauseToDecideENGTex, // CHI uses ENG
     };
-    static const void* sPlayMelodyTextures[4] = {
+    static const void* sPlayMelodyTextures[5] = {
         gPauseToPlayMelodyENGTex,
         gPauseToPlayMelodyGERTex,
         gPauseToPlayMelodyFRATex,
         gPauseToPlayMelodyJPNTex,
+        gPauseToPlayMelodyENGTex, // CHI uses ENG
     };
-    static const void* D_8082AD78[][4] = {
-        { gPauseToEquipmentENGTex, gPauseToEquipmentGERTex, gPauseToEquipmentFRATex, gPauseToEquipmentJPNTex },
-        { gPauseToSelectItemENGTex, gPauseToSelectItemGERTex, gPauseToSelectItemFRATex, gPauseToSelectItemJPNTex },
-        { gPauseToMapENGTex, gPauseToMapGERTex, gPauseToMapFRATex, gPauseToMapJPNTex },
-        { gPauseToQuestStatusENGTex, gPauseToQuestStatusGERTex, gPauseToQuestStatusFRATex, gPauseToQuestStatusJPNTex },
+    static const void* D_8082AD78[][5] = {
+        { gPauseToEquipmentENGTex, gPauseToEquipmentGERTex, gPauseToEquipmentFRATex, gPauseToEquipmentJPNTex, gPauseToEquipmentENGTex },
+        { gPauseToSelectItemENGTex, gPauseToSelectItemGERTex, gPauseToSelectItemFRATex, gPauseToSelectItemJPNTex, gPauseToSelectItemENGTex },
+        { gPauseToMapENGTex, gPauseToMapGERTex, gPauseToMapFRATex, gPauseToMapJPNTex, gPauseToMapENGTex },
+        { gPauseToQuestStatusENGTex, gPauseToQuestStatusGERTex, gPauseToQuestStatusFRATex, gPauseToQuestStatusJPNTex, gPauseToQuestStatusENGTex },
     };
-    static void* D_8082ADA8[][4] = {
-        { gPauseToMapENGTex, gPauseToMapGERTex, gPauseToMapFRATex, gPauseToMapJPNTex },
-        { gPauseToQuestStatusENGTex, gPauseToQuestStatusGERTex, gPauseToQuestStatusFRATex, gPauseToQuestStatusJPNTex },
-        { gPauseToEquipmentENGTex, gPauseToEquipmentGERTex, gPauseToEquipmentFRATex, gPauseToEquipmentJPNTex },
-        { gPauseToSelectItemENGTex, gPauseToSelectItemGERTex, gPauseToSelectItemFRATex, gPauseToSelectItemJPNTex },
+    static void* D_8082ADA8[][5] = {
+        { gPauseToMapENGTex, gPauseToMapGERTex, gPauseToMapFRATex, gPauseToMapJPNTex, gPauseToMapENGTex },
+        { gPauseToQuestStatusENGTex, gPauseToQuestStatusGERTex, gPauseToQuestStatusFRATex, gPauseToQuestStatusJPNTex, gPauseToQuestStatusENGTex },
+        { gPauseToEquipmentENGTex, gPauseToEquipmentGERTex, gPauseToEquipmentFRATex, gPauseToEquipmentJPNTex, gPauseToEquipmentENGTex },
+        { gPauseToSelectItemENGTex, gPauseToSelectItemGERTex, gPauseToSelectItemFRATex, gPauseToSelectItemJPNTex, gPauseToSelectItemENGTex },
     };
-    static u16 D_8082ADD8[4] = { 56, 88, 80, 56 };
-    static u16 D_8082ADE0[4] = { 64, 88, 72, 48 };
-    static u16 D_8082ADE8[4] = { 80, 104, 112, 80 };
+    static u16 D_8082ADD8[5] = { 56, 88, 80, 56, 56 }; // CHI uses ENG width
+    static u16 D_8082ADE0[5] = { 64, 88, 72, 48, 64 }; // CHI uses ENG width
+    static u16 D_8082ADE8[5] = { 80, 104, 112, 80, 80 }; // CHI uses ENG width
     static s16 D_8082ADF0[][4] = {
         { 180, 210, 255, 220 },
         { 100, 100, 150, 220 },
@@ -2463,14 +2475,18 @@ void KaleidoScope_UpdateNamePanel(PlayState* play) {
                 // something valid
                 sp2A %= 12;
                 // #endregion
-                if (gSaveContext.language >= LANGUAGE_GER) {
-                    sp2A += 12;
-                }
-                if (gSaveContext.language >= LANGUAGE_FRA) {
-                    sp2A += 12;
-                }
-                if (gSaveContext.language >= LANGUAGE_JPN) {
-                    sp2A += 12;
+                // SOH [Chinese] - Clamp language for texture offset
+                {
+                    u8 texLang = (gSaveContext.language == LANGUAGE_CHI) ? LANGUAGE_ENG : gSaveContext.language;
+                    if (texLang >= LANGUAGE_GER) {
+                        sp2A += 12;
+                    }
+                    if (texLang >= LANGUAGE_FRA) {
+                        sp2A += 12;
+                    }
+                    if (texLang >= LANGUAGE_JPN) {
+                        sp2A += 12;
+                    }
                 }
 
                 const char* textureName = mapNameTextures[sp2A];
@@ -2482,14 +2498,18 @@ void KaleidoScope_UpdateNamePanel(PlayState* play) {
                 // #endregion
                 osSyncPrintf("zoom_name=%d\n", pauseCtx->namedItem);
 
-                if (gSaveContext.language >= LANGUAGE_GER) {
-                    sp2A += 123;
-                }
-                if (gSaveContext.language >= LANGUAGE_FRA) {
-                    sp2A += 123;
-                }
-                if (gSaveContext.language >= LANGUAGE_JPN) {
-                    sp2A += 123;
+                // SOH [Chinese] - Clamp language to JPN max for texture offset calculation
+                {
+                    u8 texLang = (gSaveContext.language == LANGUAGE_CHI) ? LANGUAGE_ENG : gSaveContext.language;
+                    if (texLang >= LANGUAGE_GER) {
+                        sp2A += 123;
+                    }
+                    if (texLang >= LANGUAGE_FRA) {
+                        sp2A += 123;
+                    }
+                    if (texLang >= LANGUAGE_JPN) {
+                        sp2A += 123;
+                    }
                 }
 
                 osSyncPrintf("J_N=%d  point=%d\n", gSaveContext.language, sp2A);
@@ -3980,7 +4000,7 @@ void KaleidoScope_Update(PlayState* play) {
 
             if (((void)0, gSaveContext.worldMapArea) < 22) {
                 // SOH [NTSC] - change offsets to fit jpn textures
-                const uint8_t offsets[] = { 48, 70, 92, 114 };
+                const uint8_t offsets[] = { 48, 70, 92, 114, 48 }; // CHI uses ENG offset
                 const char* textureName = mapNameTextures[offsets[gSaveContext.language] + gSaveContext.worldMapArea];
                 memcpy(pauseCtx->nameSegment + 0x400, textureName, strlen(textureName) + 1);
             }

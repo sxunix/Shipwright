@@ -524,6 +524,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang|AppleClang")
             $<$<COMPILE_LANGUAGE:C>:
                 -Werror-implicit-function-declaration
                 -Wno-incompatible-pointer-types
+                -Wno-int-conversion
             >
             $<$<COMPILE_LANGUAGE:CXX>:-fpermissive>
             $<$<COMPILE_LANGUAGE:CXX>:
@@ -676,7 +677,8 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "NintendoSwitch")
     set(ADDITIONAL_LIBRARY_DEPENDENCIES
         "libultraship;"
         SDL2::SDL2
-        -lglad
+        -lEGL -lglapi -ldrm_nouveau -lnx
+        -lopusfile -lopus -lvorbisfile -lvorbis -logg
         Threads::Threads
     )
 elseif(CMAKE_SYSTEM_NAME STREQUAL "CafeOS")
