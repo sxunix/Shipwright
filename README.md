@@ -1,6 +1,42 @@
 ![Ship of Harkinian](docs/shiptitle.darkmode.png#gh-dark-mode-only)
 ![Ship of Harkinian](docs/shiptitle.lightmode.png#gh-light-mode-only)
 
+---
+
+## Fork: Nintendo Switch Port + Simplified Chinese Support
+
+This fork adds **Nintendo Switch** compilation support and **Simplified Chinese** language to SoH 9.x.
+
+### What's included
+
+- Nintendo Switch build target (produces `soh.nro`)
+- libultraship adaptations for Switch (Mesa OpenGL / SDL2)
+- Full Simplified Chinese translation (2116 messages from 3DS OoT3D + hand-translated icon messages)
+- 2161 CJK font glyphs (I4 16×16)
+- Chinese language conversion tools (see [tools/chinese/](tools/chinese/))
+
+### Build for Nintendo Switch
+
+**Prerequisites:** [devkitPro](https://devkitpro.org/) with Switch packages (`switch-dev switch-sdl2 switch-libdrm_nouveau switch-mesa switch-glm`)
+
+```bash
+git clone --recursive -b switch-chinese https://github.com/sxunix/Shipwright.git
+cd Shipwright
+cmake -B build-switch -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/Switch.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build build-switch --target soh_nro -j$(nproc)
+```
+
+Output: `build-switch/soh/soh.nro` (~37MB)
+
+### Deploy to Nintendo Switch
+
+1. Copy `soh.nro` to SD card `/switch/soh/soh.nro`
+2. Copy `oot.o2r` and `soh.o2r` to the same directory (generated from your own OoT ROM)
+3. Launch via Homebrew Menu, or create an NSP forwarder for the home screen
+4. In-game: Settings → Languages → 简体中文
+
+---
+
 ## Website
 
 Official Website: https://www.shipofharkinian.com/
