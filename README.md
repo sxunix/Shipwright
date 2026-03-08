@@ -42,8 +42,9 @@ For detailed build instructions, dependency list, Mesa GLSL fix, and troubleshoo
 
 1. Copy `soh.nro` to SD card `/switch/soh/soh.nro`
 2. Copy `oot.o2r` and `soh.o2r` to the same directory (generated from your own OoT ROM)
-3. Launch via Homebrew Menu, or create an NSP forwarder for the home screen
-4. In-game: Settings → Languages → 简体中文
+3. (Optional) Download [OoT Reloaded HD Texture Pack](https://github.com/GhostlyDark/OoT-Reloaded-SoH/releases) and place the `.o2r` file in `/switch/soh/mods/`
+4. Launch via Homebrew Menu, or create an [NSP forwarder](https://nsp-forwarder.n8.io/) for the home screen
+5. In-game: Settings → Languages → 简体中文
 
 ---
 
