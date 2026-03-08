@@ -17,16 +17,26 @@ This fork adds **Nintendo Switch** compilation support and **Simplified Chinese*
 
 ### Build for Nintendo Switch
 
-**Prerequisites:** [devkitPro](https://devkitpro.org/) with Switch packages (`switch-dev switch-sdl2 switch-libdrm_nouveau switch-mesa switch-glm`)
+**Prerequisites:** [devkitPro](https://devkitpro.org/) installed at `/opt/devkitpro`
 
 ```bash
 git clone --recursive -b switch-chinese https://github.com/sxunix/Shipwright.git
 cd Shipwright
-cmake -B build-switch -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/Switch.cmake -DCMAKE_BUILD_TYPE=Release
-cmake --build build-switch --target soh_nro -j$(nproc)
+
+# Install all dependencies (devkitPro packages + cross-compiled libraries)
+./tools/switch/setup_switch_deps.sh
+
+# Build
+export DEVKITPRO=/opt/devkitpro
+export PATH="${DEVKITPRO}/tools/bin:${PATH}"
+cmake -H. -Bbuild-switch -GNinja \
+  -DCMAKE_TOOLCHAIN_FILE=$DEVKITPRO/cmake/Switch.cmake -DUSE_OPENGLES=ON
+cmake --build build-switch --target soh_nro
 ```
 
 Output: `build-switch/soh/soh.nro` (~37MB)
+
+For detailed build instructions, dependency list, Mesa GLSL fix, and troubleshooting, see [tools/switch/README.md](tools/switch/README.md).
 
 ### Deploy to Nintendo Switch
 
