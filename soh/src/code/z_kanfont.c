@@ -5,13 +5,13 @@
 #include "message_data_static.h"
 #include "textures/nes_font_static/nes_font_static.h"
 #include "textures/kanji/kanji.h"
+#include "textures/chinese_font/chinese_font.h"
 #include "textures/message_static/message_static.h"
 
 // SOH [NTSC]
 extern MessageTableEntry* sJpnMessageEntryTablePtr;
 
-// SOH [Chinese] - iQue font data
-extern const u8 sChineseFontData[276608];
+// SOH [Chinese]
 extern MessageTableEntry* sChiMessageEntryTablePtr;
 
 // #region SOH [Port] Asset tables we can pull from instead of from ROM
@@ -4144,6 +4144,9 @@ const char* msgStaticTbl[] = {
     gMessageEndSquareTex,
     gMessageArrowTex,
 };
+
+#include "z_kanfont_chinese_tbl.inc"
+
 // #endregion
 
 /**
@@ -4182,9 +4185,9 @@ void Font_LoadChar(Font* font, u8 character, u16 codePointIndex) {
 }
 
 /**
- * Loads a Chinese character glyph from the embedded iQue font data into the character texture buffer
- * at `codePointIndex`. The value of `character` is the 2-byte iQue encoding (0xA08C-0xA775).
- * Raw I4 pixel data (128 bytes) is copied directly into charTexBuf.
+ * Loads a Chinese character glyph via OTR path into the character texture buffer
+ * at `codePointIndex`. The value of `character` is the 2-byte encoding (0xA08C-0xA775, 0xAAAA-0xAC30).
+ * Uses chineseFontTbl[] OTR path strings, enabling HD texture pack overrides.
  */
 void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
     if (sChiMessageEntryTablePtr == NULL) {
@@ -4193,14 +4196,12 @@ void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
 
     s32 glyphIndex;
     if (character >= 0xAAAA && character <= 0xAC30) {
-        // Extra glyphs (391 chars at offset 1770)
         glyphIndex = 1770 + (character - 0xAAAA);
     } else {
-        // Original glyphs (1770 chars: 0xA08C-0xA775)
         glyphIndex = character - 0xA08C;
     }
-    if (glyphIndex >= 0 && glyphIndex < 2161) {
-        memcpy(&font->charTexBuf[codePointIndex], &sChineseFontData[glyphIndex * FONT_CHAR_TEX_SIZE], FONT_CHAR_TEX_SIZE);
+    if (glyphIndex >= 0 && glyphIndex < ARRAY_COUNT(chineseFontTbl)) {
+        memcpy(&font->charTexBuf[codePointIndex], chineseFontTbl[glyphIndex], strlen(chineseFontTbl[glyphIndex]) + 1);
     }
 }
 

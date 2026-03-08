@@ -749,6 +749,130 @@ static void* iconNameTextures[] = {
     gUnusedBossKeyItemName6JPNTex,
     gUnusedBossKeyItemName7JPNTex,
     gBiggoronsSwordItemNameJPNTex,
+    // LANGUAGE_CHI
+    gDekuStickItemNameCHITex,
+    gDekuNutItemNameCHITex,
+    gBombItemNameCHITex,
+    gFairyBowItemNameCHITex,
+    gFireArrowItemNameCHITex,
+    gDinsFireItemNameCHITex,
+    gFairySlingshotItemNameCHITex,
+    gFairyOcarinaItemNameCHITex,
+    gOcarinaOfTimeItemNameCHITex,
+    gBombchuItemNameCHITex,
+    gHookshotItemNameCHITex,
+    gLongshotItemNameCHITex,
+    gIceArrowItemNameCHITex,
+    gFaroresWindItemNameCHITex,
+    gBoomerangItemNameCHITex,
+    gLensItemNameCHITex,
+    gMagicBeansItemNameCHITex,
+    gMegatonHammerItemNameCHITex,
+    gLightArrowItemNameCHITex,
+    gNayrusLoveItemNameCHITex,
+    gEmptyBottleItemNameCHITex,
+    gRedPotionItemNameCHITex,
+    gGreenPotionItemNameCHITex,
+    gBluePotionItemNameCHITex,
+    gBottledFairyItemNameCHITex,
+    gFishItemNameCHITex,
+    gFullMilkItemNameCHITex,
+    gRutosLetterItemNameCHITex,
+    gBlueFireItemNameCHITex,
+    gBugItemNameCHITex,
+    gBigPoeItemNameCHITex,
+    gHalfMilkItemNameCHITex,
+    gPoeItemNameCHITex,
+    gWeirdEggItemNameCHITex,
+    gCuccoItemNameCHITex,
+    gZeldasLetterItemNameCHITex,
+    gKeatonMaskItemNameCHITex,
+    gSkullMaskItemNameCHITex,
+    gSpookyMaskItemNameCHITex,
+    gBunnyHoodItemNameCHITex,
+    gGoronMaskItemNameCHITex,
+    gZoraMaskItemNameCHITex,
+    gGerudoMaskItemNameCHITex,
+    gMaskofTruthItemNameCHITex,
+    gSOLDOUTItemNameCHITex,
+    gPocketEggItemNameCHITex,
+    gPocketCuccoItemNameCHITex,
+    gCojiroItemNameCHITex,
+    gOddMushroomItemNameCHITex,
+    gOddPotionItemNameCHITex,
+    gPoachersSawItemNameCHITex,
+    gBrokenGoronsSwordItemNameCHITex,
+    gPrescriptionItemNameCHITex,
+    gEyeBallFrogItemNameCHITex,
+    gEyeDropsItemNameCHITex,
+    gClaimCheckItemNameCHITex,
+    gUnusedWindMedallionItemName1JPNTex,
+    gUnusedFireMedallionItemName1JPNTex,
+    gUnusedIceMedallionItemName1JPNTex,
+    gKokiriSwordItemNameCHITex,
+    gMasterSwordItemNameCHITex,
+    gGiantsKnifeItemNameCHITex,
+    gDekuShieldItemNameCHITex,
+    gHylianShieldItemNameCHITex,
+    gMirrorShieldItemNameCHITex,
+    gKokiriTunicItemNameCHITex,
+    gGoronTunicItemNameCHITex,
+    gZoraTunicItemNameCHITex,
+    gKokiriBootsItemNameCHITex,
+    gIronBootsItemNameCHITex,
+    gHoverBootsItemNameCHITex,
+    gBulletBag30ItemNameCHITex,
+    gBulletBag40ItemNameCHITex,
+    gBulletBag50ItemNameCHITex,
+    gQuiver30ItemNameCHITex,
+    gQuiver40ItemNameCHITex,
+    gQuiver50ItemNameCHITex,
+    gBombBag20ItemNameCHITex,
+    gBombBag30ItemNameCHITex,
+    gBombBag40ItemNameCHITex,
+    gGoronsBraceletItemNameCHITex,
+    gSilverGauntletsItemNameCHITex,
+    gGoldenGauntletsItemNameCHITex,
+    gSilverScaleItemNameCHITex,
+    gGoldenScaleItemNameCHITex,
+    gBrokenGiantsKnifeItemNameCHITex,
+    gUnusedBossKeyItemName1JPNTex,
+    gUnusedBossKeyItemName2JPNTex,
+    gUnusedBossKeyItemName3JPNTex,
+    gUnusedBossKeyItemName4JPNTex,
+    gMinuetOfForestItemNameCHITex,
+    gBoleroOfFireItemNameCHITex,
+    gSerenadeOfWaterItemNameCHITex,
+    gRequiemOfSpiritItemNameCHITex,
+    gNocturneOfShadowItemNameCHITex,
+    gPreludeOfLightItemNameCHITex,
+    gZeldasLullabyItemNameCHITex,
+    gEponasSongItemNameCHITex,
+    gSariasSongItemNameCHITex,
+    gSunsSongItemNameCHITex,
+    gSongOfTimeItemNameCHITex,
+    gSongOfStormsItemNameCHITex,
+    gForestMedallionItemNameCHITex,
+    gFireMedallionItemNameCHITex,
+    gWaterMedallionItemNameCHITex,
+    gSpiritMedallionItemNameCHITex,
+    gShadowMedallionItemNameCHITex,
+    gLightMedallionItemNameCHITex,
+    gKokiriEmeraldItemNameCHITex,
+    gGoronsRubyItemNameCHITex,
+    gZorasSapphireItemNameCHITex,
+    gStoneofAgonyItemNameCHITex,
+    gGerudosCardItemNameCHITex,
+    gGoldSkulltulaItemNameCHITex,
+    gPieceOfHeartItemNameCHITex,
+    gUnusedPieceOfHeartItemName1JPNTex,
+    gUnusedBigKeyItemNameCHITex,
+    gCompassItemNameCHITex,
+    gDungeonMapItemNameCHITex,
+    gUnusedBossKeyItemName5JPNTex,
+    gUnusedBossKeyItemName6JPNTex,
+    gUnusedBossKeyItemName7JPNTex,
+    gBiggoronsSwordItemNameCHITex,
 };
 
 // SOH [NTSC] - Fit in JPN textures, resulting in changes to offsets when indexed
@@ -805,6 +929,19 @@ static void* mapNameTextures[] = {
     /*  9 */ gLostWoodsPointNameJPNTex,
     /* 10 */ gKokiriForestPointNameJPNTex,
     /* 11 */ gZorasDomainPointNameJPNTex,
+    // LANGUAGE_CHI
+    /*  0 */ gHauntedWastelandPointNameCHITex,
+    /*  1 */ gGerudosFortressPointNameCHITex,
+    /*  2 */ gGerudoValleyPointNameCHITex,
+    /*  3 */ gHyliaLakesidePointNameCHITex,
+    /*  4 */ gLonLonRanchPointNameCHITex,
+    /*  5 */ gMarketPointNameCHITex,
+    /*  6 */ gHyruleFieldPointNameCHITex,
+    /*  7 */ gDeathMountainPointNameCHITex,
+    /*  8 */ gKakarikoVillagePointNameCHITex,
+    /*  9 */ gLostWoodsPointNameCHITex,
+    /* 10 */ gKokiriForestPointNameCHITex,
+    /* 11 */ gZorasDomainPointNameCHITex,
     // LANGUAGE_ENG
     /*  0 */ gHyruleFieldPositionNameENGTex,
     /*  1 */ gKakarikoVillagePositionNameENGTex,
@@ -897,6 +1034,29 @@ static void* mapNameTextures[] = {
     /* 19 */ gLonLonRanchPositionNameJPNTex,
     /* 20 */ gQuestionMarkPositionNameJPNTex,
     /* 21 */ gGanonsCastlePositionNameJPNTex,
+    // LANGUAGE_CHI
+    /*  0 */ gHyruleFieldPositionNameCHITex,
+    /*  1 */ gKakarikoVillagePositionNameCHITex,
+    /*  2 */ gGraveyardPositionNameCHITex,
+    /*  3 */ gZorasRiverPositionNameCHITex,
+    /*  4 */ gKokiriForestPositionNameCHITex,
+    /*  5 */ gSacredForestMeadowPositionNameCHITex,
+    /*  6 */ gLakeHyliaPositionNameCHITex,
+    /*  7 */ gZorasDomainPositionNameCHITex,
+    /*  8 */ gZorasFountainPositionNameCHITex,
+    /*  9 */ gGerudoValleyPositionNameCHITex,
+    /* 10 */ gLostWoodsPositionNameCHITex,
+    /* 11 */ gDesertColossusPositionNameCHITex,
+    /* 12 */ gGerudosFortressPositionNameCHITex,
+    /* 13 */ gHauntedWastelandPositionNameCHITex,
+    /* 14 */ gMarketPositionNameCHITex,
+    /* 15 */ gHyruleCastlePositionNameCHITex,
+    /* 16 */ gDeathMountainTrailPositionNameCHITex,
+    /* 17 */ gDeathMountainCraterPositionNameCHITex,
+    /* 18 */ gGoronCityPositionNameCHITex,
+    /* 19 */ gLonLonRanchPositionNameCHITex,
+    /* 20 */ gQuestionMarkPositionNameCHITex,
+    /* 21 */ gGanonsCastlePositionNameCHITex,
 };
 
 s16 D_8082AAEC[] = {
@@ -2475,9 +2635,9 @@ void KaleidoScope_UpdateNamePanel(PlayState* play) {
                 // something valid
                 sp2A %= 12;
                 // #endregion
-                // SOH [Chinese] - Clamp language for texture offset
+                // SOH [Chinese] - Use actual language for texture offset (CHI block added to array)
                 {
-                    u8 texLang = (gSaveContext.language == LANGUAGE_CHI) ? LANGUAGE_ENG : gSaveContext.language;
+                    u8 texLang = gSaveContext.language;
                     if (texLang >= LANGUAGE_GER) {
                         sp2A += 12;
                     }
@@ -2485,6 +2645,9 @@ void KaleidoScope_UpdateNamePanel(PlayState* play) {
                         sp2A += 12;
                     }
                     if (texLang >= LANGUAGE_JPN) {
+                        sp2A += 12;
+                    }
+                    if (texLang >= LANGUAGE_CHI) {
                         sp2A += 12;
                     }
                 }
@@ -2498,9 +2661,9 @@ void KaleidoScope_UpdateNamePanel(PlayState* play) {
                 // #endregion
                 osSyncPrintf("zoom_name=%d\n", pauseCtx->namedItem);
 
-                // SOH [Chinese] - Clamp language to JPN max for texture offset calculation
+                // SOH [Chinese] - Use actual language for texture offset (CHI block added to array)
                 {
-                    u8 texLang = (gSaveContext.language == LANGUAGE_CHI) ? LANGUAGE_ENG : gSaveContext.language;
+                    u8 texLang = gSaveContext.language;
                     if (texLang >= LANGUAGE_GER) {
                         sp2A += 123;
                     }
@@ -2508,6 +2671,9 @@ void KaleidoScope_UpdateNamePanel(PlayState* play) {
                         sp2A += 123;
                     }
                     if (texLang >= LANGUAGE_JPN) {
+                        sp2A += 123;
+                    }
+                    if (texLang >= LANGUAGE_CHI) {
                         sp2A += 123;
                     }
                 }
@@ -4000,7 +4166,7 @@ void KaleidoScope_Update(PlayState* play) {
 
             if (((void)0, gSaveContext.worldMapArea) < 22) {
                 // SOH [NTSC] - change offsets to fit jpn textures
-                const uint8_t offsets[] = { 48, 70, 92, 114, 48 }; // CHI uses ENG offset
+                const uint8_t offsets[] = { 60, 82, 104, 126, 148 }; // 5 langs × 12 PointNames = 60 base
                 const char* textureName = mapNameTextures[offsets[gSaveContext.language] + gSaveContext.worldMapArea];
                 memcpy(pauseCtx->nameSegment + 0x400, textureName, strlen(textureName) + 1);
             }

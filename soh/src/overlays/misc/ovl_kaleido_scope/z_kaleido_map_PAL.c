@@ -32,6 +32,10 @@ void KaleidoScope_DrawDungeonMap(PlayState* play, GraphicsContext* gfxCtx) {
         gPauseDekuTitleJPNTex, gPauseDodongoTitleJPNTex,   gPauseJabuTitleJPNTex,   gPauseForestTitleJPNTex,
         gPauseFireTitleJPNTex, gPauseWaterTitleJPNTex,     gPauseSpiritTitleJPNTex, gPauseShadowTitleJPNTex,
         gPauseBotWTitleJPNTex, gPauseIceCavernTitleJPNTex,
+        // LANGUAGE_CHI - uses ENG fallback (no CHI dungeon title textures)
+        gPauseDekuTitleENGTex, gPauseDodongoTitleENGTex,   gPauseJabuTitleENGTex,   gPauseForestTitleENGTex,
+        gPauseFireTitleENGTex, gPauseWaterTitleENGTex,     gPauseSpiritTitleENGTex, gPauseShadowTitleENGTex,
+        gPauseBotWTitleENGTex, gPauseIceCavernTitleENGTex,
     };
     static void* floorIconTexs[] = {
         gDungeonMapBlankFloorButtonTex, gDungeonMap8FButtonTex, gDungeonMap7FButtonTex, gDungeonMap6FButtonTex,
