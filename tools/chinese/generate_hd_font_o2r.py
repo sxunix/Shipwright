@@ -43,7 +43,14 @@ TEX_FLAG_LOAD_AS_RAW = 1
 
 # HD texture parameters
 HD_SIZE = 128
-FONT_SIZE = 112
+RENDER_SIZE = 256  # 2x supersampling for sharper strokes
+FONT_SIZE = 216    # ~108pt × 2 for the 2x canvas
+GLYPH_COLOR = (210, 210, 210, 255)  # gray210 to match OoT Reloaded HD kanji style
+
+# Characters that need substitution (font lacks correct glyph)
+CHAR_SUBSTITUTIONS = {
+    '⋯': '…',  # U+22EF → U+2026 (Source Han Sans renders ⋯ as X placeholder)
+}
 
 # Scale factors: original 16×16 I4 → HD 128×128 RGBA32
 # HByteScale = HD_bytes_per_row / orig_bytes_per_row = (128*4) / (16*0.5) = 64.0
@@ -67,18 +74,31 @@ def parse_custom_entries(tbl_path):
 
 
 def generate_rgba_image(char, font, size):
-    """Generate an RGBA image for a character (white on transparent)."""
-    img = Image.new('RGBA', (size, size), (0, 0, 0, 0))
+    """Generate an RGBA image for a character using 2x supersampling + LANCZOS downscale.
+
+    Renders at 2x resolution (256×256) then downscales to target size (128×128)
+    using LANCZOS resampling. This produces much sharper strokes than direct
+    rendering at the target resolution, because strokes are more likely to align
+    with pixel boundaries at the higher resolution.
+    """
+    # Apply character substitution if needed
+    char = CHAR_SUBSTITUTIONS.get(char, char)
+
+    # Render at 2x resolution
+    img = Image.new('RGBA', (RENDER_SIZE, RENDER_SIZE), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
 
     bbox = font.getbbox(char)
     char_w = bbox[2] - bbox[0]
     char_h = bbox[3] - bbox[1]
 
-    x = (size - char_w) // 2 - bbox[0]
-    y = (size - char_h) // 2 - bbox[1]
+    x = (RENDER_SIZE - char_w) // 2 - bbox[0]
+    y = (RENDER_SIZE - char_h) // 2 - bbox[1]
 
-    draw.text((x, y), char, fill=(255, 255, 255, 255), font=font)
+    draw.text((x, y), char, fill=GLYPH_COLOR, font=font)
+
+    # Downscale to target size with LANCZOS for sharp edges
+    img = img.resize((size, size), Image.LANCZOS)
     return img.tobytes('raw', 'RGBA')
 
 

@@ -3096,4 +3096,33 @@ static const ALIGN_ASSET(2) char gMsgCharChnAAC2Tex[] = dgMsgCharChnAAC2Tex;
 #define dgMsgCharChnAACCTex "__OTR__textures/chinese_font/gMsgCharChnAACCTex"
 static const ALIGN_ASSET(2) char gMsgCharChnAACCTex[] = dgMsgCharChnAACCTex;
 
+// Session 43: 22 new characters for truncated message translations
+// Custom textures (9 chars not in ROM kanji set)
+#define dgMsgCharChnAC31Tex "__OTR__textures/chinese_font/gMsgCharChnAC31Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC31Tex[] = dgMsgCharChnAC31Tex;
+
+#define dgMsgCharChnAC32Tex "__OTR__textures/chinese_font/gMsgCharChnAC32Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC32Tex[] = dgMsgCharChnAC32Tex;
+
+#define dgMsgCharChnAC35Tex "__OTR__textures/chinese_font/gMsgCharChnAC35Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC35Tex[] = dgMsgCharChnAC35Tex;
+
+#define dgMsgCharChnAC36Tex "__OTR__textures/chinese_font/gMsgCharChnAC36Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC36Tex[] = dgMsgCharChnAC36Tex;
+
+#define dgMsgCharChnAC37Tex "__OTR__textures/chinese_font/gMsgCharChnAC37Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC37Tex[] = dgMsgCharChnAC37Tex;
+
+#define dgMsgCharChnAC3ATex "__OTR__textures/chinese_font/gMsgCharChnAC3ATex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC3ATex[] = dgMsgCharChnAC3ATex;
+
+#define dgMsgCharChnAC3BTex "__OTR__textures/chinese_font/gMsgCharChnAC3BTex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC3BTex[] = dgMsgCharChnAC3BTex;
+
+#define dgMsgCharChnAC41Tex "__OTR__textures/chinese_font/gMsgCharChnAC41Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC41Tex[] = dgMsgCharChnAC41Tex;
+
+#define dgMsgCharChnAC42Tex "__OTR__textures/chinese_font/gMsgCharChnAC42Tex"
+static const ALIGN_ASSET(2) char gMsgCharChnAC42Tex[] = dgMsgCharChnAC42Tex;
+
 #endif

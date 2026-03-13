@@ -2160,4 +2160,26 @@ static const char* chineseFontTbl[2161] = {
     gMsgCharChnAC2ETex, // [2158] 0xAC2E '默'
     gMsgKanji9343Tex, // [2159] 0xAC2F '鼎' (kanji)
     gMsgKanji8CDBTex, // [2160] 0xAC30 '鼓' (kanji)
+    gMsgCharChnAC31Tex, // [2161] 0xAC31 '—'
+    gMsgCharChnAC32Tex, // [2162] 0xAC32 '乖'
+    gMsgKanji97E1Tex, // [2163] 0xAC33 '例' (kanji)
+    gMsgKanji906ETex, // [2164] 0xAC34 '刃' (kanji)
+    gMsgCharChnAC35Tex, // [2165] 0xAC35 '厅'
+    gMsgCharChnAC36Tex, // [2166] 0xAC36 '宁'
+    gMsgCharChnAC37Tex, // [2167] 0xAC37 '岭'
+    gMsgKanji8AF5Tex, // [2168] 0xAC38 '忌' (kanji)
+    gMsgKanji8AB3Tex, // [2169] 0xAC39 '患' (kanji)
+    gMsgCharChnAC3ATex, // [2170] 0xAC3A '戈'
+    gMsgCharChnAC3BTex, // [2171] 0xAC3B '扣'
+    gMsgKanji88A5Tex, // [2172] 0xAC3C '挨' (kanji)
+    gMsgKanji8FB7Tex, // [2173] 0xAC3D '捷' (kanji)
+    gMsgKanji8E7CTex, // [2174] 0xAC3E '旨' (kanji)
+    gMsgKanji8D56Tex, // [2175] 0xAC3F '昂' (kanji)
+    gMsgKanji90B2Tex, // [2176] 0xAC40 '栖' (kanji)
+    gMsgCharChnAC41Tex, // [2177] 0xAC41 '灾'
+    gMsgCharChnAC42Tex, // [2178] 0xAC42 '牵'
+    gMsgKanji8F47Tex, // [2179] 0xAC43 '秀' (kanji)
+    gMsgKanji90DETex, // [2180] 0xAC44 '窃' (kanji)
+    gMsgKanji91DATex, // [2181] 0xAC45 '腿' (kanji)
+    gMsgKanji89EBTex, // [2182] 0xAC46 '雅' (kanji)
 };

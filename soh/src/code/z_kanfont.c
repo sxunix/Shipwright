@@ -4194,11 +4194,39 @@ void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
         return;
     }
 
+    // Handle iQue button/icon codes (0xAA9F-0xAAAB)
+    // These map to the same NES font icon textures used by the English decoder
+    if (character >= 0xAA9F && character <= 0xAAAB) {
+        static const char* buttonIconTbl[] = {
+            gMsgChar9FButtonATex,      // 0xAA9F
+            gMsgCharA0ButtonBTex,      // 0xAAA0
+            gMsgCharA1ButtonCTex,      // 0xAAA1
+            gMsgCharA2ButtonLTex,      // 0xAAA2
+            gMsgCharA3ButtonRTex,      // 0xAAA3
+            gMsgCharA4ButtonZTex,      // 0xAAA4
+            gMsgCharA5ButtonCUpTex,    // 0xAAA5
+            gMsgCharA6ButtonCDownTex,  // 0xAAA6
+            gMsgCharA7ButtonCLeftTex,  // 0xAAA7
+            gMsgCharA8ButtonCRightTex, // 0xAAA8
+            gMsgCharA9ZTargetSignTex,  // 0xAAA9
+            gMsgCharAAControlStickTex, // 0xAAAA
+            gMsgCharABControlPadTex,   // 0xAAAB
+        };
+        s32 btnIndex = character - 0xAA9F;
+        memcpy(&font->charTexBuf[codePointIndex], buttonIconTbl[btnIndex], strlen(buttonIconTbl[btnIndex]) + 1);
+        return;
+    }
+
     s32 glyphIndex;
-    if (character >= 0xAAAA && character <= 0xAC30) {
-        glyphIndex = 1770 + (character - 0xAAAA);
-    } else {
+    if (character >= 0xAAAC && character <= 0xAC46) {
+        // Extended range (v8 custom chars, not used by iQue native messages)
+        glyphIndex = 1770 + 2 + (character - 0xAAAC);
+    } else if (character >= 0xA08C && character <= 0xA775) {
+        // Main iQue Chinese character range
         glyphIndex = character - 0xA08C;
+    } else {
+        // Unknown character code — skip to avoid out-of-bounds access
+        return;
     }
     if (glyphIndex >= 0 && glyphIndex < ARRAY_COUNT(chineseFontTbl)) {
         memcpy(&font->charTexBuf[codePointIndex], chineseFontTbl[glyphIndex], strlen(chineseFontTbl[glyphIndex]) + 1);

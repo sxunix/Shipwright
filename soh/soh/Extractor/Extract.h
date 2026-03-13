@@ -15,6 +15,7 @@
 #endif
 
 static constexpr size_t MB_BASE = 1024 * 1024;
+static constexpr size_t MB29 = 29868032; // iQue CN ROM size (not a power-of-2 multiple)
 static constexpr size_t MB32 = 32 * MB_BASE;
 static constexpr size_t MB54 = 54 * MB_BASE;
 static constexpr size_t MB64 = 64 * MB_BASE;

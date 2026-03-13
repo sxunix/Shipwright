@@ -1972,11 +1972,10 @@ void Message_DecodeCHI(PlayState* play) {
                 msgCtx->textDrawPos = msgCtx->decodedTextLen;
             }
             break;
-        } else if (temp_s2 == 0x03) {
-            // 3-byte Chinese character: 0x03 + high byte + low byte
-            u8 highByte = font->msgBuf[++msgCtx->msgBufPos];
+        } else if (temp_s2 >= 0xA0) {
+            // 2-byte Chinese character: high byte (0xA0+) + low byte (iQue native encoding)
             u8 lowByte = font->msgBuf[++msgCtx->msgBufPos];
-            u16 chiChar = (highByte << 8) | lowByte;
+            u16 chiChar = (temp_s2 << 8) | lowByte;
             Font_LoadCharChinese(font, chiChar, charTexIdx);
             charTexIdx += FONT_CHAR_TEX_SIZE;
             msgCtx->msgBufDecoded[decodedBufPos] = MESSAGE_CHI_CHAR_MARKER;
